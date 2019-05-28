@@ -1,1 +1,108 @@
+#include<iostream>
+#include<conio.h>
+#include<stdio.h>
+#include<math.h>
 
+using namespace std;
+
+//Funcion para hallar la parte factorial
+int parteFactorial(int a) {
+
+	int parteFact = 1;
+
+	for (int i = 1; i <= a; i++) {
+
+		parteFact = parteFact * i;
+
+	}
+	return parteFact;
+}
+
+//Funcion para hallar la parte exponencial
+float parteExponencial(float b, float c) {
+
+	float parteExpo = 1 + b;
+
+	for (int i = 2; i <= c; i++) {
+
+		parteExpo = parteExpo + (pow(b, i) / parteFactorial(i));
+
+	}
+	return parteExpo;
+}
+
+//Funcion para dibujar el rombo
+void rombo(int b)
+{
+	for (int i = 1; i <= 5; i++)
+	{
+		cout << endl;
+	}
+	int n = 1;
+	for (int i = 1; i != 0; i = i + n) {
+
+		if (i == b) 
+		{
+			n = -n;
+		}
+		for (int k = 1; k <= 10 - i; k++)
+		{
+			cout << " ";
+		}
+		for (int l = 1; l <= i * 2 - 1; l++) 
+		{
+			cout << l;
+		}
+		cout << endl;
+	}
+}
+
+//Logica
+int main() {
+
+	int a, b;
+
+	do {
+		//Opciones
+		cout << "1)Determinar el factorial de un número: " << endl;
+		cout << "2)Calcular el valor de e^a: " << endl;
+		cout << "3)Imprimir rombo: " << endl;
+		cout << "4)Fin: " << endl;
+		cin >> a;
+
+	} while (a != 3 && a != 2 && a != 1 && a != 4);
+
+	switch (a) {
+	case 1:
+		//Opcion 1
+		cout << "ingrese el numero: " << endl;
+		cin >> b;
+		cout << "el factorial del numero es: " << parteFactorial(b);
+		break;
+
+	case 2:
+		//Opcion 2
+		int c;
+		cout << "ingrese el valor de a-k: " << endl;
+		cin >> b >> c;
+		cout << "el valor del e^a es: " << parteExponencial(b, c) << endl;
+		break;
+
+	case 3:
+		//Opcion 3
+		do {
+			cout << "ingrese el numero: " << endl;
+			cin >> b;
+
+		} while (b > 10);
+		rombo(b);
+		break;
+
+	case 4:
+		//Opcion 4
+		break;
+	}
+
+	_getch();
+	return 0;
+}
