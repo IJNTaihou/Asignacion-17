@@ -7,16 +7,13 @@ using namespace std;
 int sumatoriaComp(int a, int b) {
 	int suma;
 	suma = a + b;
-
-	return suma;
+        return suma;
 }
 
 //Funcion para hallar la diferencia de 2 numeros complejos
 int diferenciaComp(int a, int b) {
 	int resta;
-
 	resta = a - b;
-
 	return resta;
 }
 //Definiciond e variables
@@ -73,7 +70,7 @@ int main() {
 		cout << "Presione una tecla para continuar..." << endl;
 		break;
 
-    //Opcion X
+        //Opcion X
 	case 'X':
 		cout << "Presione una tecla para continuar..." << endl;
 		break;
