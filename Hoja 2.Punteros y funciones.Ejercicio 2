@@ -1,1 +1,82 @@
+#include<iostream>
+#include<conio.h>
+#include<stdio.h>
+using namespace std;
 
+//Funcion para hallar la sumatoria de 2 numeros complejos
+int sumatoriaComp(int a, int b) {
+	int suma;
+	suma = a + b;
+
+	return suma;
+}
+
+//Funcion para hallar la diferencia de 2 numeros complejos
+int diferenciaComp(int a, int b) {
+	int resta;
+
+	resta = a - b;
+
+	return resta;
+}
+//Definiciond e variables
+int main() {
+	char n;
+	int n1, m1, n2, m2, resultado;
+
+	cout << "            MENU " << endl;
+	cout << "           ======" << endl;
+	cout << "A.Sumar 2 Numeros Complejos. " << endl;
+	cout << "B.Restar 2 Numeros Complejos. " << endl;
+	cout << "X.Salir del Programa. " << endl;
+
+	do {
+		cout << "Introduzca a opcion de su eleccion: " << endl;
+		cin >> n;
+	} while (n != 'A'&& n != 'B' && n != 'X');
+
+	//Opciones a elegir
+	switch (n) {
+	//Opcion A
+	case 'A':
+		cout << "Primer numero:" << endl;
+		cout << "Parte Real: ";
+		cin >> n1;
+		cout << "Parte Imaginaria: ";
+		cin >> m1;
+		cout << "Segundo numero: " << endl;
+		cout << "Parte Real: ";
+		cin >> n2;
+		cout << "Parte Imaginaria: ";
+		cin >> m2;
+		cout << " " << endl;
+		cout << "(" << n1 << "+" << m1 << "i" << ")" << " + " << "(" << n2 << "+" << m2 << "i" << ")" << " = " << "(" << sumatoriaComp(n1, m1) << " + " << sumatoriaComp(n2, m2) << "i" << ")" << endl;
+		cout << " "<< endl;
+		cout << "Presione una tecla para continuar..." << endl;
+		break;
+
+	//Opcion B
+	case 'B':
+		cout << "Primer numero:" << endl;
+		cout << "Parte Real: ";
+		cin >> n1;
+		cout << "Parte Imaginaria: ";
+		cin >> m1;
+		cout << "Segundo numero:" << endl;
+		cout << "Parte Real: ";
+		cin >> n2;
+		cout << "Parte Imaginaria: ";
+		cin >> m2;
+		cout << " " << endl;
+		cout << "(" << n1 << "+" << m1 << "i" << ")" << " - " << "(" << n2 << "+" << m2 << "i" << ")" << " = " << "(" << diferenciaComp(n1, 1) << " - " << diferenciaComp(n2, m2) << "i" << ")" << endl;
+		cout << " " << endl;
+		cout << "Presione una tecla para continuar..." << endl;
+		break;
+
+    //Opcion X
+	case 'X':
+		cout << "Presione una tecla para continuar..." << endl;
+		break;
+	}
+	_getch();
+}
